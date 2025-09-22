@@ -193,7 +193,7 @@ section .konten-isi p {
   object-fit: cover;
 }
 .car-card:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 /* Download */
