@@ -266,7 +266,7 @@ footer .layar-dalam .copyright {
   .tombol-menu {
     display: flex;
     position: absolute;
-    top: 1.7rem;
+    top: 1.5rem;
     right: 1rem;
     flex-direction: column;
     justify-content: space-between;
