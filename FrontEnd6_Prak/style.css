@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(nasa.webp);
+  background-size: 100%;
+  color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #66fcf1;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+.date-picker {
+  margin-bottom: 20px;
+}
+
+input[type="date"] {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  padding: 6px 12px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #45a29e;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #66fcf1;
+  color: #000;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+.result {
+  margin-top: 20px;
+  text-align: justify;
+  background: #1f2833;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#media {
+  margin: 15px 0;
+}
+
+#media img, 
+#media iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}

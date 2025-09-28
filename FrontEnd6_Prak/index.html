@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA APOD API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Galeri Astronomi NASA</h1>
+
+    <!-- Input tanggal -->
+    <div class="date-picker">
+      <label for="date">Pilih Tanggal:</label>
+      <input type="date" id="date">
+      <button id="getData">Tampilkan</button>
+    </div>
+
+    <!-- Tempat hasil ditampilkan -->
+    <div id="result" class="result">
+      <h2 id="title"></h2>
+      <p id="dateText"></p>
+      <div id="media"></div>
+      <p id="explanation"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
