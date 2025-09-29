@@ -1,4 +1,4 @@
-const apiKey = "DEMO_KEY"; // Ganti dengan API key kamu
+const apiKey = "d3pVmkIbBO2evwVankwXqcfFKFaOaKFAp09TRUFC"; // Ganti dengan API key kamu
 
 $(document).ready(function () {
   $("#getData").on("click", function () {
