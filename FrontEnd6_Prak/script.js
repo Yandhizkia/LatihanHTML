@@ -1,42 +1,33 @@
-const apiKey = "d3pVmkIbBO2evwVankwXqcfFKFaOaKFAp09TRUFC"; // Ganti dengan API key kamu jika punya
-const getDataBtn = document.getElementById("getData");
+const apiKey = "DEMO_KEY"; // Ganti dengan API key kamu
 
-getDataBtn.addEventListener("click", () => {
-  const date = document.getElementById("date").value;
+$(document).ready(function () {
+  $("#getData").on("click", function () {
+    const date = $("#date").val();
 
-  if (!date) {
-    alert("Silakan pilih tanggal terlebih dahulu.");
-    return;
-  }
+    if (!date) {
+      alert("Silakan pilih tanggal terlebih dahulu.");
+      return;
+    }
 
-  const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`;
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("title").textContent = data.title;
-      document.getElementById("dateText").textContent = `Tanggal: ${data.date}`;
-      document.getElementById("explanation").textContent = data.explanation;
+    $.getJSON(url, function (data) {
+      $("#title").text(data.title);
+      $("#dateText").text(`Tanggal: ${data.date}`);
+      $("#explanation").text(data.explanation);
 
-      const mediaContainer = document.getElementById("media");
-      mediaContainer.innerHTML = "";
+      const $media = $("#media");
+      $media.empty();
 
       if (data.media_type === "image") {
-        const img = document.createElement("img");
-        img.src = data.url;
-        img.alt = data.title;
-        mediaContainer.appendChild(img);
+        $media.append(`<img src="${data.url}" alt="${data.title}">`);
       } else if (data.media_type === "video") {
-        const iframe = document.createElement("iframe");
-        iframe.src = data.url;
-        iframe.width = "100%";
-        iframe.height = "400";
-        iframe.allowFullscreen = true;
-        mediaContainer.appendChild(iframe);
+        $media.append(
+          `<iframe src="${data.url}" width="100%" height="400" allowfullscreen></iframe>`
+        );
       }
-    })
-    .catch(error => {
-      console.error("Error fetching data:", error);
+    }).fail(function () {
       alert("Gagal mengambil data dari NASA API.");
     });
+  });
 });
